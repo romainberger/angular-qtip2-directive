@@ -9,7 +9,7 @@
         link: function(scope, element, attrs) {
           var my = attrs.my || 'bottom center'
             , at = attrs.at || 'top center'
-            , qtipClass = attr.class || 'qtip'
+            , qtipClass = attrs.class || 'qtip'
 
           $(element).qtip({
             content: attrs.content,
