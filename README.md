@@ -17,5 +17,6 @@ List of attributes you can use:
 * `data-content`: Content that will appear in the tip
 * `data-my`: position of the tip arrow - optionnal: default to `bottom center`
 * `data-at`: position of the tip - optionnal: default to `top center`
+* `data-class`: class to use on the tip - optionnal: default to `qtip`
 
-For more details about the `data-my` and `data-at` options see the [Qtip2 documentation](http://qtip2.com/demos#section-positioning)
+For more details about the options see the [Qtip2 documentation](http://qtip2.com/demos#section-positioning)
