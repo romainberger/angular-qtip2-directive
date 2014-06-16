@@ -15,6 +15,7 @@ Include the script `qtip2` into your app and add `qtip2` as a module dependency 
 List of attributes you can use:
 
 * `data-content`: Content that will appear in the tip
+* `data-title`: Title that will appear in the tip
 * `data-my`: position of the tip arrow - optionnal: default to `bottom center`
 * `data-at`: position of the tip - optionnal: default to `top center`
 * `data-class`: class to use on the tip - optionnal: default to `qtip`
