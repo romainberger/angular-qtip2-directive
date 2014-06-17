@@ -10,11 +10,13 @@
           var my = attrs.my || 'bottom center'
             , at = attrs.at || 'top center'
             , qtipClass = attrs.class || 'qtip'
+            , content
 
           if (attrs.title) {
-            var content = {'title': attrs.title, 'text': attrs.content}
-          } else {
-            var content = attrs.content
+            content = {'title': attrs.title, 'text': attrs.content}
+          }
+          else {
+            content = attrs.content
           }
 
           $(element).qtip({
