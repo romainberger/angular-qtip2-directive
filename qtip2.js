@@ -11,8 +11,14 @@
             , at = attrs.at || 'top center'
             , qtipClass = attrs.class || 'qtip'
 
+          if (attrs.title) {
+            var content = {'title': attrs.title, 'text': attrs.content}
+          } else {
+            var content = attrs.content
+          }
+
           $(element).qtip({
-            content: attrs.content,
+            content: content,
             position: {
               my: my,
               at: at,
