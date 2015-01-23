@@ -6,6 +6,9 @@
     .directive('qtip', function() {
       return {
         restrict: 'A',
+        scope : {
+            qtipVisible : '='
+        },
         link: function(scope, element, attrs) {
           var my = attrs.qtipMy || 'bottom center'
             , at = attrs.qtipAt || 'top center'
@@ -29,6 +32,14 @@
             },
             style: qtipClass
           });
+
+          if(attrs.qtipVisible) {
+//              var qt_api = $(element).qtip('api');
+              scope.$watch('qtipVisible', function (newValue, oldValue) {
+                  console.log('new value!', newValue);
+                  $(element).qtip('toggle', newValue);
+              });
+          }
         }
       }
     })
