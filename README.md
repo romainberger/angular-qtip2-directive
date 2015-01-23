@@ -19,5 +19,6 @@ List of attributes you can use:
 * `qtip-my`: position of the tip arrow - optionnal: default to `bottom center`
 * `qtip-at`: position of the tip - optionnal: default to `top center`
 * `qtip-class`: class to use on the tip - optionnal: default to `qtip`
+* `qtip-visible`: a scope variable to trigger the visibillity from extern
 
 For more details about the options see the [Qtip2 documentation](http://qtip2.com/demos#section-positioning)
