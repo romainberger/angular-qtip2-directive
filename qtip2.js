@@ -6,17 +6,17 @@
     .directive('qtip', function() {
       return {
         restrict: 'A',
+        scope : {
+            qtipVisible : '='
+        },
         link: function(scope, element, attrs) {
-          var my = attrs.my || 'bottom center'
-            , at = attrs.at || 'top center'
-            , qtipClass = attrs.class || 'qtip'
-            , content
-
-          if (attrs.title) {
-            content = {'title': attrs.title, 'text': attrs.content}
-          }
-          else {
-            content = attrs.content
+          var my = attrs.qtipMy || 'bottom center'
+            , at = attrs.qtipAt || 'top center'
+            , qtipClass = attrs.qtipClass || 'qtip'
+            , content = attrs.qtipContent || attrs.qtip;
+        
+          if (attrs.qtipTitle) {
+            content = {'title': attrs.qtipTitle, 'text': attrs.qtip};
           }
 
           $(element).qtip({
@@ -31,7 +31,13 @@
               delay : 100
             },
             style: qtipClass
-          })
+          });
+
+          if(attrs.qtipVisible) {
+              scope.$watch('qtipVisible', function (newValue, oldValue) {
+                  $(element).qtip('toggle', newValue);
+              });
+          }
         }
       }
     })
