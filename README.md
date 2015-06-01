@@ -4,13 +4,19 @@ Angular directive for [Qtip2](http://qtip2.com/)
 
 ## Usage
 
+Install with npm
+
+    $ npm install angular-qtip2-directive --save
+
 Install with [Bower](http://bower.io)
 
-    bower install angular-qtip2-directive --save-dev
+    $ bower install angular-qtip2-directive --save-dev
 
 Include the script `qtip2` into your app and add `qtip2` as a module dependency to your app. Use the directive on the elements with the attribute `qtip`
 
-    <a href="/cool-stuff" qtip="Text to appear in the tip">Hover me</a>
+```html
+<a href="/cool-stuff" qtip="Text to appear in the tip">Hover me</a>
+```
 
 List of attributes you can use:
 
