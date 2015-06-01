@@ -1,0 +1,20 @@
+{
+  "name": "angular-qtip2-directive",
+  "version": "0.1.2",
+  "description": "Angular directive for Qtip2",
+  "main": "qtip2.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romainberger/angular-qtip2-directive.git"
+  },
+  "author": "Romain Berger <romain@romainberger.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romainberger/angular-qtip2-directive/issues"
+  },
+  "homepage": "https://github.com/romainberger/angular-qtip2-directive",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "qtip2": "~2.2.0"
+  }
+}
