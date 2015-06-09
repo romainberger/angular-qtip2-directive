@@ -7,13 +7,16 @@
       return {
         restrict: 'A',
         scope : {
-            qtipVisible : '='
+            qtipVisible : '=',
+            qtip : '@',
+            qtipTitle : '@'
         },
         link: function(scope, element, attrs) {
           var my = attrs.qtipMy || 'bottom center'
             , at = attrs.qtipAt || 'top center'
             , qtipClass = attrs.qtipClass || 'qtip'
-            , content = attrs.qtipContent || attrs.qtip;
+            , content = attrs.qtipContent || attrs.qtip
+            , delay = attrs.qtipDelay || 100;
         
           if (attrs.qtipTitle) {
             content = {'title': attrs.qtipTitle, 'text': attrs.qtip};
@@ -27,16 +30,26 @@
               target: element
             },
             hide: {
-              fixed : true,
-              delay : 100
+              fixed: true,
+              delay: delay
             },
             style: qtipClass
           });
 
           if(attrs.qtipVisible) {
-              scope.$watch('qtipVisible', function (newValue, oldValue) {
-                  $(element).qtip('toggle', newValue);
-              });
+            scope.$watch('qtipVisible', function (newValue, oldValue) {
+              $(element).qtip('toggle', newValue);
+            });
+          }
+          
+          scope.$watch('qtip', function(newValue) {
+            $(element).qtip('option', 'content.text', newValue);
+          });
+
+          if (attrs.qtipTitle) {
+            scope.$watch('qtipTitle', function (newValue) {
+              $(element).qtip('option', 'content.title', newValue);
+            });
           }
         }
       }
